@@ -24,9 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 
-
-
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback ,GoogleMap.OnInfoWindowClickListener{
+public class MapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
     private boolean cafe;
@@ -39,14 +37,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
 
         Bundle extras = getIntent().getExtras();
-        if(extras != null){
+        if (extras != null) {
             cafe = extras.getBoolean("Cafe");
             libraries = extras.getBoolean("libraries");
             BUspaces = extras.getBoolean("BUonly");
             all = extras.getBoolean("All");
-            if(all){
+            if (all) {
                 cafe = true;
-                libraries= true;
+                libraries = true;
                 BUspaces = true;
             }
         }
@@ -57,7 +55,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-       // getSupportActionBar().setDisplayShowHomeEnabled(true);
+        // getSupportActionBar().setDisplayShowHomeEnabled(true);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -75,34 +73,34 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        if(cafe){
-           //all the cafe markers
-           //magenta cuz why not
+        if (cafe) {
+            //all the cafe markers
+            //magenta cuz why not
             LatLng Pavement = new LatLng(42.349802, -71.107192);
             mMap.addMarker(new MarkerOptions().position(Pavement).title("Pavement").snippet("trashy lattes").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
         }
-        if(libraries){
+        if (libraries) {
             //all the libraries
             // orange marker
             LatLng Mugar = new LatLng(42.350851, -71.108103);
             mMap.addMarker(new MarkerOptions().position(Mugar).title("Mugar").snippet("h\ni\ni\ni\n").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
         }
-        if(BUspaces){
+        if (BUspaces) {
             //all the Bu spaces
             // red marker
             LatLng Photonics = new LatLng(42.349197, -71.106092);
             mMap.addMarker(new MarkerOptions().position(Photonics).title("Photonics").snippet("Let's see if we can make this really cool \n by adding tonnes of lines").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         }
         // Add a marker in Sydney and move the camera
-        LatLng cslab = new LatLng(42.349737, -71.106898);
+        LatLng cslab = new LatLng(42.349197, -71.106092);
         mMap.addMarker(new MarkerOptions().position(cslab).title("Yeeto Cheeto"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(cslab));
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(16));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cslab, 14));
+//        mMap.moveCamera(CameraUpdateFactory.zoomTo(14));
         mMap.setOnInfoWindowClickListener(this);
     }
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this,"what does this look like",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "what does this look like", Toast.LENGTH_SHORT).show();
     }
 }
