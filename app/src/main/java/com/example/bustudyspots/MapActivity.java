@@ -36,6 +36,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private boolean libraries;
     private boolean BUspaces;
     private boolean all;
+    private final String Description = "Tap for more info";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +79,60 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         return super.onOptionsItemSelected(item);
     }
+    // All the locations
+    private Marker ingalls;
+    private Marker mugar;
+    private Marker stuvi2;
+    private Marker gsu;
+    private Marker pho;
+    private Marker sci;
+    private Marker law;
+    private Marker cas;
+    private Marker yawkey;
+    private Marker hojo;
+    private Marker sed;
+    private Marker scienglib;
+    private Marker sth;
+    private Marker sar;
+    private Marker stuvi1;
+    private Marker cfa;
+    private Marker khc;
+    private Marker com;
+    private Marker warren;
+    private Marker elie;
+    private Marker clafin;
+    private Marker sleeper;
+    private Marker rich;
+    private Marker towers;
+    private Marker cgs;
+    private Marker qst;
+    private Marker buswellfoureight;
+    private Marker elliot;
+    private Marker commtennineteen;
+    private Marker beach;
+    private Marker hillel;
+    private Marker south;
+    private Marker fitrec;
+    private Marker engl;
+    private Marker barnes;
+    private Marker psych;
+    private Marker danielsen;
+
+    private Marker pardee;
+
+    private Marker pavement;
+    private Marker nero;
+    private Marker swarren;
+    private Marker swest;
+    private Marker squest;
+    private Marker skenmore;
+    private Marker tatte;
+    private Marker limered;
+    private Marker buickst;
+    private Marker tbaar;
+    private Marker panera;
+    private Marker bluestate;
+    private Marker trident;
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -99,8 +154,38 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         if (cafe) {
             //all the cafe markers
             //magenta cuz why not
-            LatLng Pavement = new LatLng(42.349802, -71.107192);
-            mMap.addMarker(new MarkerOptions().position(Pavement).title("Pavement").snippet("trashy lattes").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+
+            MarkerOptions cafes = new MarkerOptions().snippet(Description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
+
+            LatLng pavementl = new LatLng(42.349802, -71.107192);
+            pavement = mMap.addMarker(cafes.position(pavementl).title("Pavement"));
+            pavement.setTag(ID.PAVEMENT);
+
+            LatLng nerol = new LatLng(42.352234, -71.122626);
+            nero = mMap.addMarker(cafes.position(nerol).title("Cafe Nero"));
+            nero.setTag(ID.NERO);
+
+            LatLng swarrenl = new LatLng(42.349350, -71.103092);
+            swarren = mMap.addMarker(cafes.position(swarrenl).title("Central Campus Starbucks"));
+            swarren.setTag(ID.SWARREN);
+
+            LatLng swestl = new LatLng(42.350704, -71.114545);
+            swest = mMap.addMarker(cafes.position(swestl).title("West Campus Starbucks"));
+            swest.setTag(ID.SWEST);
+
+            LatLng squestl = new LatLng(42.349629, -71.099548);
+            squest = mMap.addMarker(cafes.position(squestl).title("Questrom Starbucks"));
+            squest.setTag(ID.SQUEST);
+
+            LatLng skenmorel = new LatLng(42.348501, -71.095930);
+            skenmore = mMap.addMarker(cafes.position(skenmorel).title("East Campus Starbucks"));
+            skenmore.setTag(ID.SKENMORE);
+
+            LatLng tattel = new LatLng(42.345765, -71.106860);
+            tatte = mMap.addMarker(cafes.position(tattel).title("Tatte Bakery"));
+            tatte.setTag(ID.TATTE);
+
+
         }
         if (libraries) {
             //all the libraries
@@ -226,6 +311,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Toast.makeText(this, "what does this look like", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "what does this look like", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "Info window clicked");
+        Intent showMoreInfo = new Intent(this, ScrollingActivity.class);
+        showMoreInfo.putExtra("ID", (Integer) marker.getTag());
+        startActivity(showMoreInfo);
     }
 }
