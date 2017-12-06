@@ -29,6 +29,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+/**
+ * Shows the google map, places the markers
+ * takes bool cafe, library, BUspaces, and All from SettingActivity
+ *
+ */
+
 
 public class MapActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
@@ -37,6 +43,13 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private boolean BUspaces;
     private boolean all;
     private final String Description = "Tap for more info";
+
+    /*
+    The first method called
+    takes the intent from SettingsActivity and sets up booleans
+    then makes the map fragment and calls the location finding methods
+
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +82,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
     }
-
+ /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -79,6 +92,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         return super.onOptionsItemSelected(item);
     }
+    */
     // All the locations
     private Marker ingalls;
     private Marker mugar;
@@ -134,6 +148,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private Marker panera;
     private Marker bluestate;
     private Marker trident;
+
+    /*
+    sets up markers and checks if the location is permitted
+     */
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -370,14 +388,20 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             danielsen = mMap.addMarker(BUspaces.position(danielsenl).title("Danielsen"));
             danielsen.setTag(ID.DANIELSEN);
 
+            LatLng engll = new LatLng(42.350580, -71.104164);
+            engl = mMap.addMarker(BUspaces.position(engll).title("Department of English"));
+            engl.setTag(ID.ENGL);
 
+            LatLng buswelll = new LatLng(42.347011, -71.106543);
+            buswellfoureight = mMap.addMarker(BUspaces.position(buswelll).title("48 Buswell St"));
+            buswellfoureight.setTag(ID.BUSWELLFOUREIGHT);
 
 
 
 
         }
 
-        mMap.setOnInfoWindowClickListener(this);
+        mMap.setOnInfoWindowClickListener(this); // enables the user to tap the info window of the marker to take them to a different screen
 
     }
     private static final String TAG = "MapActivity";
@@ -392,6 +416,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private int locationTries;
+
+    /*
+    finds location and zooms in there
+    location is found in another Task
+    if location cannot be found (user's location setting is off or they did not allow it)
+    then it zooms in on Mugar
+
+     */
 
     private void getDeviceLocation(){
         Log.d(TAG, "getDeviceLocation: getting the devices current location");
@@ -431,10 +463,17 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
+    /*
+    moves the user's view
+     */
+
     private void moveCamera(LatLng latLng, float zoom){
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
     }
+    /*
+    sets up the map fragment
+     */
 
     private void initMap(){
         Log.d(TAG, "initMap: initializing map");
@@ -442,6 +481,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
         mapFragment.getMapAsync(MapActivity.this);
     }
+    /*
+    Access to location is a 'Dangerous Permission' so there has to be a pop-up prompting the user
+    to confirm/deny access
+     */
 
     private void getLocationPermission(){
         Log.d(TAG, "getLocationPermission: getting location permissions");
@@ -490,6 +533,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
     }
 
+    /*
+    takes the user to the ScrollActivity, which is the info screen for each marker
+     */
 
     @Override
     public void onInfoWindowClick(Marker marker) {
