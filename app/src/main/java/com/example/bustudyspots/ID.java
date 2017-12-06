@@ -13,7 +13,6 @@ package com.example.bustudyspots;
 public class ID {
     //BU spaces
     public static final int INGALLS = 0;
-    public static final int MUGAR = 1;
     public static final int STUVI2 = 2;
     public static final int GSU = 3;
     public static final int PHO  = 4;
@@ -52,6 +51,8 @@ public class ID {
 
     // Libraries
     public static final int PARDEE = 50;
+    public static final int MUGAR = 51;
+    public static final int ASTRO = 52; //Astronomy Library
 
     // Cafes
     public static final int PAVEMENT = 100;

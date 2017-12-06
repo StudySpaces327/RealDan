@@ -119,6 +119,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private Marker danielsen;
 
     private Marker pardee;
+    private Marker astro;
 
     private Marker pavement;
     private Marker nero;
@@ -185,23 +186,197 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             tatte = mMap.addMarker(cafes.position(tattel).title("Tatte Bakery"));
             tatte.setTag(ID.TATTE);
 
+            LatLng limeredl = new LatLng(42.351968, -71.124107);
+            limered = mMap.addMarker(cafes.position(limeredl).title("LimeRed Teahouse"));
+            limered.setTag(ID.LIMERED);
 
+            LatLng buickl = new LatLng(42.352402, -71.115933);
+            buickst = mMap.addMarker(cafes.position(buickl).title("Buick St. Cafe"));
+            buickst.setTag(ID.BUICKST);
+
+            LatLng tbaarl = new LatLng(42.346223, -71.108655);
+            tbaar = mMap.addMarker(cafes.position(tbaarl).title("T Baar"));
+            tbaar.setTag(ID.TBAAR);
+
+            LatLng paneral = new LatLng(42.344658, -71.101500);
+            panera = mMap.addMarker(cafes.position(paneral).title("Panera Bread"));
+            panera.setTag(ID.PANERA);
+
+            LatLng bluestatel = new LatLng(42.351811, -71.118953);
+            bluestate = mMap.addMarker(cafes.position(bluestatel).title("Blue State Coffee"));
+            bluestate.setTag(ID.BLUESTATE);
+
+            LatLng tridentl = new LatLng(42.348239, -71.086610);
+            trident = mMap.addMarker(cafes.position(tridentl).title("Trident Cafe"));
+            trident.setTag(ID.TRIDENT);
         }
         if (libraries) {
             //all the libraries
-            // orange marker
-            LatLng Mugar = new LatLng(42.350851, -71.108103);
-            mMap.addMarker(new MarkerOptions().position(Mugar).title("Mugar").snippet("h\ni\ni\ni\n").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+            // green marker
+            MarkerOptions libraries = new MarkerOptions().snippet(Description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+
+            LatLng mugarl = new LatLng(42.350851, -71.108103);
+            mugar = mMap.addMarker(libraries.position(mugarl).title("Mugar Library"));
+            mugar.setTag(ID.MUGAR);
+
+            LatLng astrol = new LatLng(42.350262, -71.105716);
+            astro = mMap.addMarker(libraries.position(astrol).title("Astronomy Library"));
+            astro.setTag(ID.ASTRO);
+
+            LatLng pardeel = new LatLng(42.3497, -71.0995);
+            pardee = mMap.addMarker(libraries.position(pardeel).title("Pardee Library"));
+            pardee.setTag(ID.PARDEE);
+
         }
         if (BUspaces) {
             //all the Bu spaces
             // red marker
-            LatLng Photonics = new LatLng(42.349197, -71.106092);
-            mMap.addMarker(new MarkerOptions().position(Photonics).title("Photonics").snippet("Let's see if we can make this really cool \n by adding tonnes of lines").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+
+            MarkerOptions BUspaces = new MarkerOptions().snippet(Description).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
+
+            LatLng photonics = new LatLng(42.349197, -71.106092);
+            pho = mMap.addMarker(BUspaces.position(photonics).title("Photonics"));
+            pho.setTag(ID.PHO);
+
+            LatLng ingallsl = new LatLng(42.348520, -71.102873);
+            ingalls = mMap.addMarker(BUspaces.position(ingallsl).title("Ingalls"));
+            ingalls.setTag(ID.INGALLS);
+
+            LatLng stuvi2l = new LatLng(42.353199, -71.117717);
+            stuvi2 = mMap.addMarker(BUspaces.position(stuvi2l).title("Student Village 2"));
+            stuvi2.setTag(ID.STUVI2);
+
+            LatLng gsul = new LatLng(42.350920, -71.108950);
+            gsu = mMap.addMarker(BUspaces.position(gsul).title("George Sherman Union"));
+            gsu.setTag(ID.GSU);
+
+            LatLng scil = new LatLng(42.348380, -71.100336);
+            sci = mMap.addMarker(BUspaces.position(scil).title("Metcalf Science Center"));
+            sci.setTag(ID.SCI);
+
+            LatLng lawl = new LatLng(42.351060, -71.107174);
+            law = mMap.addMarker(BUspaces.position(lawl).title("School of Law"));
+            sci.setTag(ID.LAW);
+
+            LatLng casl = new LatLng(42.350260, -71.104891);
+            cas = mMap.addMarker(BUspaces.position(casl).title("College of Arts and Sciences"));
+            cas.setTag(ID.CAS);
+
+            LatLng yawkeyl = new LatLng(42.349769, -71.097907);
+            yawkey = mMap.addMarker(BUspaces.position(yawkeyl).title("Yawkey"));
+            yawkey.setTag(ID.YAWKEY);
+
+            LatLng hojol = new LatLng(42.349468, -71.098717);
+            hojo = mMap.addMarker(BUspaces.position(hojol).title("Hojo"));
+            hojo.setTag(ID.HOJO);
+
+            LatLng sedl = new LatLng(42.349765, -71.100728	);
+            sed = mMap.addMarker(BUspaces.position(sedl).title("School of Education"));
+            sed.setTag(ID.SED);
+
+            LatLng scienglibl = new LatLng(42.348475, -71.102257);
+            scienglib = mMap.addMarker(BUspaces.position(scienglibl).title("Science and Engineering Library"));
+            scienglib.setTag(ID.SCIENGLIB);
+
+            LatLng sthl = new LatLng(42.350456, -71.107039);
+            sth = mMap.addMarker(BUspaces.position(sthl).title("School of Theology"));
+            sth.setTag(ID.STH);
+
+            LatLng sargl = new LatLng(42.349768, -71.102200);
+            sar = mMap.addMarker(BUspaces.position(sargl).title("Sargent College"));
+            sar.setTag(ID.SAR);
+
+            LatLng stuvi1l = new LatLng(42.352392, -71.115974);
+            stuvi1 = mMap.addMarker(BUspaces.position(stuvi1l).title("Student Village 1"));
+            stuvi1.setTag(ID.STUVI1);
+
+            LatLng cfal = new LatLng(42.351479, -71.113874);
+            cfa = mMap.addMarker(BUspaces.position(cfal).title("College of Fine Arts"));
+            cfa.setTag(ID.CFA);
+
+            LatLng khcl = new LatLng(42.350312, -71.097017);
+            khc = mMap.addMarker(BUspaces.position(khcl).title("Kilachand Honors College"));
+            khc.setTag(ID.KHC);
+
+            LatLng coml = new LatLng(42.348876, -71.102469);
+            com = mMap.addMarker(BUspaces.position(coml).title("College of Communication"));
+            com.setTag(ID.COM);
+
+            LatLng warrenl = new LatLng(42.3495, -71.1048);
+            warren = mMap.addMarker(BUspaces.position(warrenl).title("Warren Towers"));
+            warren.setTag(ID.WARREN);
+
+            LatLng eliel = new LatLng(42.3505 , -71.1000);
+            elie = mMap.addMarker(BUspaces.position(eliel).title("Elie Wiesel Center for Jewish Studies"));
+            elie.setTag(ID.ELIE);
+
+            LatLng clafinl = new LatLng(42.3525, -71.1198);
+            clafin = mMap.addMarker(BUspaces.position(clafinl).title("Claflin Hall"));
+            clafin.setTag(ID.CLAFIN);
+
+            LatLng sleeperl = new LatLng(42.352895, -71.120510);
+            sleeper = mMap.addMarker(BUspaces.position(sleeperl).title("Sleeper Hall"));
+            sleeper.setTag(ID.SLEEPER);
+
+            LatLng richl = new LatLng(42.353513, -71.120632);
+            rich = mMap.addMarker(BUspaces.position(richl).title("Rich Hall"));
+            rich.setTag(ID.RICH);
+
+            LatLng towersl = new LatLng(42.349988, -71.099799);
+            towers = mMap.addMarker(BUspaces.position(towersl).title("The Towers"));
+            towers.setTag(ID.TOWERS);
+
+            LatLng cgsl = new LatLng(42.3515, -71.1146);
+            cgs = mMap.addMarker(BUspaces.position(cgsl).title("College of General Studies"));
+            cgs.setTag(ID.CGS);
+
+            LatLng questroml = new LatLng(42.3496, -71.0995);
+            qst = mMap.addMarker(BUspaces.position(questroml).title("Questrom School of Business"));
+            qst.setTag(ID.QST);
+
+            LatLng elliotl = new LatLng(42.354373, -71.121415);
+            elliot = mMap.addMarker(BUspaces.position(elliotl).title("Elliot H. Cole Academic Support Center"));
+            elliot.setTag(ID.ELLIOT);
+
+            LatLng tenninel = new LatLng(42.352290, -71.121406);
+            commtennineteen = mMap.addMarker(BUspaces.position(tenninel).title("1019 Comm Ave Student Residences"));
+            commtennineteen.setTag(ID.COMMTENNINETEEN);
+
+            LatLng beachl = new LatLng(42.351193, -71.106082);
+            beach = mMap.addMarker(BUspaces.position(beachl).title("BU Beach"));
+            beach.setTag(ID.BEACH);
+
+            LatLng hillell = new LatLng(42.350810, -71.103113);
+            hillel = mMap.addMarker(BUspaces.position(hillell).title("Hillel Dining Hall"));
+            hillel.setTag(ID.HILLEL);
+
+            LatLng southl = new LatLng(42.348015, -71.106186);
+            south = mMap.addMarker(BUspaces.position(southl).title("South Campus"));
+            south.setTag(ID.SOUTH);
+
+            LatLng fitrecl = new LatLng(42.3519, -71.1165);
+            fitrec = mMap.addMarker(BUspaces.position(fitrecl).title("FitRec"));
+            fitrec.setTag(ID.FITREC);
+
+            LatLng barnesl = new LatLng(42.349259, -71.096227);
+            barnes = mMap.addMarker(BUspaces.position(barnesl).title("Barnes and Nobles"));
+            barnes.setTag(ID.BARNES);
+
+            LatLng psychl = new LatLng(42.348821, -71.104500);
+            psych = mMap.addMarker(BUspaces.position(psychl).title("Psych Building"));
+            psych.setTag(ID.PSYCH);
+
+            LatLng danielsenl = new LatLng(42.350926, -71.090339);
+            danielsen = mMap.addMarker(BUspaces.position(danielsenl).title("Danielsen"));
+            danielsen.setTag(ID.DANIELSEN);
+
+
+
+
+
+
         }
-        // Add a marker in Sydney and move the camera
-        LatLng cslab = new LatLng(42.349197, -71.106092);
-        mMap.addMarker(new MarkerOptions().position(cslab).title("Yeeto Cheeto"));
+
         mMap.setOnInfoWindowClickListener(this);
 
     }
@@ -234,8 +409,14 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                             Log.d(TAG, "onComplete: found location!");
                             Location currentLocation = (Location) task.getResult();
 
-                                moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-                                        DEFAULT_ZOOM);
+                                try {
+                                    moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
+                                            DEFAULT_ZOOM);
+                                }
+                                catch (NullPointerException e){
+                                    Log.e(TAG, "getDeviceLocation: Could not find Device Location");
+                                    moveCamera(mugar.getPosition(),DEFAULT_ZOOM);
+                                }
                         }else{
                             Log.d(TAG, "onComplete: current location is null");
                             Toast.makeText(MapActivity.this, "unable to get current location", Toast.LENGTH_SHORT).show();
@@ -245,6 +426,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             }
         }catch (SecurityException e){
             Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage() );
+            moveCamera(mugar.getPosition(),DEFAULT_ZOOM);
         }
 
     }

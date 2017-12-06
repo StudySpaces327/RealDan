@@ -42,10 +42,15 @@ public class SettingActivity extends AppCompatActivity {
     public void openMapActivity() {
 
         Intent openMap = new Intent(this, MapActivity.class);
-        openMap.putExtra("All",allPlaces.isChecked());
-        openMap.putExtra("Cafe",cafe.isChecked());
-        openMap.putExtra("BUonly",BUonly.isChecked());
-        openMap.putExtra("libraries",libraries.isChecked());
+        if(allPlaces.isChecked() == false && cafe.isChecked() == false && BUonly.isChecked() == false && libraries.isChecked() == false ){
+            openMap.putExtra("All",true);
+        }
+        else {
+            openMap.putExtra("All", allPlaces.isChecked());
+        }
+        openMap.putExtra("Cafe", cafe.isChecked());
+        openMap.putExtra("BUonly", BUonly.isChecked());
+        openMap.putExtra("libraries", libraries.isChecked());
         startActivity(openMap);
     }
 
