@@ -261,7 +261,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             ingalls.setTag(ID.INGALLS);
 
             LatLng stuvi2l = new LatLng(42.353199, -71.117717);
-            stuvi2 = mMap.addMarker(BUspaces.position(stuvi2l).title("Student Village 2"));
+            stuvi2 = mMap.addMarker(BUspaces.position(stuvi2l).title("Student Village Two"));
             stuvi2.setTag(ID.STUVI2);
 
             LatLng gsul = new LatLng(42.350920, -71.108950);
@@ -305,7 +305,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             sar.setTag(ID.SAR);
 
             LatLng stuvi1l = new LatLng(42.352392, -71.115974);
-            stuvi1 = mMap.addMarker(BUspaces.position(stuvi1l).title("Student Village 1"));
+            stuvi1 = mMap.addMarker(BUspaces.position(stuvi1l).title("Student Village One"));
             stuvi1.setTag(ID.STUVI1);
 
             LatLng cfal = new LatLng(42.351479, -71.113874);
@@ -409,7 +409,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
     private static final String COURSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1234;
-    private static final float DEFAULT_ZOOM = 15f;
+    private static final float DEFAULT_ZOOM = 16f;
 
     //vars
     private Boolean mLocationPermissionsGranted = false;
@@ -447,7 +447,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                                 }
                                 catch (NullPointerException e){
                                     Log.e(TAG, "getDeviceLocation: Could not find Device Location");
-                                    moveCamera(mugar.getPosition(),DEFAULT_ZOOM);
+                                    moveCamera(new LatLng(42.350851, -71.108103),DEFAULT_ZOOM);
                                 }
                         }else{
                             Log.d(TAG, "onComplete: current location is null");
