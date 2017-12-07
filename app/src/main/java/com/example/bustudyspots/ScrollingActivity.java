@@ -330,6 +330,12 @@ public class ScrollingActivity extends AppCompatActivity {
                 textView.setText("Basement: \n lounge is usually quiet"+ tapback);
                 break;
             }
+
+            case ID.BLUESTATE:{
+                toolbar.setTitle("Blue State Coffee");
+                textView.setText("Open 7am to 10pm Mon to Fri\n 8am to 11pm Sat-Sun");
+                break;
+            }
         }
 
 
