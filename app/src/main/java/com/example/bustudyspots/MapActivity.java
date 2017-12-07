@@ -274,7 +274,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 
             LatLng lawl = new LatLng(42.351060, -71.107174);
             law = mMap.addMarker(BUspaces.position(lawl).title("School of Law"));
-            sci.setTag(ID.LAW);
+            law.setTag(ID.LAW);
 
             LatLng casl = new LatLng(42.350260, -71.104891);
             cas = mMap.addMarker(BUspaces.position(casl).title("College of Arts and Sciences"));
@@ -541,6 +541,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     public void onInfoWindowClick(Marker marker) {
        // Toast.makeText(this, "what does this look like", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "Info window clicked");
+        Log.d(TAG, "Marker number: " + marker.getTag());
+        Log.d(TAG, "Marker name: " + marker.getTitle());
         Intent showMoreInfo = new Intent(this, ScrollingActivity.class);
         showMoreInfo.putExtra("ID", (Integer) marker.getTag());
         startActivity(showMoreInfo);

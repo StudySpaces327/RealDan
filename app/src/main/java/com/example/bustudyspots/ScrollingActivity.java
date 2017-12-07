@@ -50,13 +50,13 @@ public class ScrollingActivity extends AppCompatActivity {
             }
 
             case ID.PHO:{
-                toolbar.setTitle("Photonics\n\"Pho\"");
+                toolbar.setTitle("Photonics");
                 textView.setText("1st Floor \n Seats and tables by the central staircase \n\nFloors 3 - 9 have small spaces on the east-most and west-most sides\n Floor 7 has chairs"+tapback);
                 break;
             }
 
             case ID.SCI:{
-                toolbar.setTitle("Metcalf Science Building\n\"SCI\"");
+                toolbar.setTitle("Metcalf Science Building");
                 textView.setText("Open most hours of the day\nAfter 6pm, enter through side entrance\n\nBasement\nTables and booths available\n\nEmpty classrooms are sometimes available "+tapback);
                 break;
             }
@@ -237,7 +237,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
             case ID.CGS:{
                 toolbar.setTitle("College of General Studies");
-                textView.setText("2nd Floor: \n Lounge with couches and tables\n\nKatzenberg Center Study Lounge, 3rd Floor\n Open 9am to 5pm Mon to Thurs\n 9am to 4pm Fri\n Has a printer\n\nWriting Center\n located at the back of Katzenberg\n Meeting by appointment only, 10am to 4om Mon to Thurs, 10am to 1pm Fri"+ tapback);
+                textView.setText("2nd Floor: \n Lounge with couches and tables\n\nKatzenberg Center Study Lounge, 3rd Floor\n Open 9am to 5pm Mon to Thurs\n 9am to 4pm Fri\n Has a printer\n\nWriting Center\n located at the back of Katzenberg\n Meeting by appointment only, 10am to 4pm Mon to Thurs, 10am to 1pm Fri"+ tapback);
                 break;
             }
 
