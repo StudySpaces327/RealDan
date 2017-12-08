@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+//just the first screen you see, with a nice enthusastic button.
+//opens the Settings Activity
+
 public class MainActivity extends AppCompatActivity {
 
     private Button open_setting;
