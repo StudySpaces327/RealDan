@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+// This activity is for the location descriptions. 
+// The MapActivity passes the ID for the marker, and here it is taken from the Intent
+
 public class ScrollingActivity extends AppCompatActivity {
 
     private final String tapback = "\n\n\n\nTap your back button to go back to the map";
@@ -16,8 +19,8 @@ public class ScrollingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView textView = (TextView) findViewById(R.id.long_info_id);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar); // used to customise the text on the toolbar
+        TextView textView = (TextView) findViewById(R.id.long_info_id); // used to alter the text
 
         Bundle extras = getIntent().getExtras();
 
