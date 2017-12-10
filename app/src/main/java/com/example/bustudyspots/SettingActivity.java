@@ -43,7 +43,7 @@ public class SettingActivity extends AppCompatActivity {
 
         Intent openMap = new Intent(this, MapActivity.class);
         if(allPlaces.isChecked() == false && cafe.isChecked() == false && BUonly.isChecked() == false && libraries.isChecked() == false ){
-            openMap.putExtra("All",true);
+            openMap.putExtra("All",true);  // if no check box is checked, all markers show up
         }
         else {
             openMap.putExtra("All", allPlaces.isChecked());
@@ -63,6 +63,8 @@ public class SettingActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    //These methods are just for shorthand
 
     public boolean cafeisChecked() {
         return cafe.isChecked();
